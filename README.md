@@ -43,7 +43,6 @@ This repository provides automated code generation for solving HANK and RANK mod
 - `OMP=0`: Taylor rule with interest rate smoothing
 - `OMP=1`: Ramsey optimal monetary policy
 - `OMP=2`: Fixed inflation target (π = π̄)
-- `OMP=3`: Exogenous inflation path
 
 **Shock Types**
 - Monetary policy shocks
@@ -111,19 +110,17 @@ N = 100;                 % Wealth grid size (HANK only)
 - `0` - Taylor rule
 - `1` - Ramsey optimal policy
 - `2` - Fixed inflation: `π = π̄`
-- `3` - Exogenous inflation path (loaded from file)
 
 
 **Shock configuration:**
 ```matlab
 shocktype = 2;      % 0=none, 1=monetary, 2=preference, 3=cost-push, 4=TFP
-shocksize = -50;    % Size in basis points (100 bp = 1%)
+shocksize = -100;    % Size in basis points (100 bp = 1%)
 ```
 
 **Solution method:**
 ```matlab
 linearize = 0;      % 0=nonlinear, 1=linear, 2=linear then nonlinear
-quadratic = 0;      % 1=second-order perturbation
 ```
 
 **Simulation horizon:**
@@ -194,9 +191,9 @@ To modify the model:
 
 5. Edit the master mod file to include the generated sub-files (in the current example, `HANK.mod` or `RANK.mod`)
 
-### Important Constraints
+### Important things to take into account
 
-- Provide all private equilibrium equations (funcODE+funcSTAT) in continuous time
+- Provide all private equilibrium equations (funcODE+funcSTAT) in continuous time, discretizing in the state space
 - Only one time derivative per equation (must appear linearly)
 - Do not mix state and forward variables in the same equation
 - Variable names cannot start with `v_` or `dot_`
