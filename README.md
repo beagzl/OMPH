@@ -171,7 +171,7 @@ This simulates a -100bp shock to the time preference rate under optimal monetary
 
 To modify the model:
 
-1. Edit equations in `buildfile.m` in the appropriate `case` block and adjust number of forward/backlooking dynamic equations:
+1. Edit equations in `buildfile.m` in the appropriate `case` block and adjust number of forward/backlooking dynamic equations. The user needs to provide the dynamic private equilibrium conditions and the planner's objective, discretized with respect to the state space according to a valid discretization scheme.
    - `funcODE`: Dynamic equations (ODEs)
    - `funcSTAT`: Static equilibrium conditions
    - `Obj`: Objective function (welfare)
@@ -193,7 +193,6 @@ To modify the model:
 
 ### Important things to take into account
 
-- Provide all private equilibrium equations (funcODE+funcSTAT) in continuous time, discretizing in the state space
 - Only one time derivative per equation (must appear linearly)
 - Do not mix state and forward variables in the same equation
 - Variable names cannot start with `v_` or `dot_`
