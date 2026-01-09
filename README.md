@@ -55,8 +55,6 @@ This repository provides automated code generation for solving HANK and RANK mod
 - Nonlinear perfect foresight
 
 ### 3.2- Quick Start
-
- **Create the folder "/_simulations"** inside the main folder
  
  **Run the Master file** `MASTER.m`
 
@@ -76,7 +74,7 @@ This repository provides automated code generation for solving HANK and RANK mod
 3. **Run simulations**:
    ```matlab
    % Run Section 2 of MASTER.m
-   % Results automatically saved to .mat files in "/_simulations" folder
+   % Results automatically saved to .mat files in the folder
    ```
 
 ### 3.3- Detailed Workflow
