@@ -56,6 +56,8 @@ This repository provides automated code generation for solving HANK and RANK mod
 
 ### 3.2- Quick Start
 
+ **Create the folder "/_simulations"** inside the main folder
+ 
  **Run the Master file** `MASTER.m`
 
 1. **Generate both models** (run just once):
