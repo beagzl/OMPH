@@ -44,6 +44,6 @@ subplot(3,3,9),  hold on, plot(years(iniT:maxT),((slope(iniT:maxT)-slope(end))/s
 
 
 if I_save==1
-    save(['_simulations/',modelfilename,'_shocktype',num2str(shocktype),'_policy',num2str(OMP)])
+    save([modelfilename,'_shocktype',num2str(shocktype),'_policy',num2str(OMP)])
 end
 
